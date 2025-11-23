@@ -96,6 +96,28 @@ function tabComplete(input) {
     const currentWord = words[words.length - 1] || '';
     const prefix = words.slice(0, -1).join(' ');
     
+    // Check if input ends with space (user wants to see available options)
+    const endsWithSpace = input.endsWith(' ') && input.trim().length > 0;
+    
+    if (endsWithSpace && words.length > 0) {
+        // User typed a word with space, show all commands starting with that word
+        const firstWord = words[0].toLowerCase();
+        const matchingCommands = availableCommands.filter(cmd => {
+            const cmdWords = cmd.split(' ');
+            return cmdWords[0] === firstWord && cmdWords.length > 1;
+        });
+        
+        if (matchingCommands.length > 0) {
+            const helpText = `Available commands:<br><br>${matchingCommands.map(cmd => {
+                const cmdParts = cmd.split(' ');
+                const description = getCommandDescription(cmd);
+                return `  <span class="command">${cmd}</span> - ${description}`;
+            }).join('<br>')}`;
+            addOutputLine(helpText, 'info');
+            return input; // Don't change input
+        }
+    }
+    
     // Find matching commands
     const matches = availableCommands.filter(cmd => {
         const cmdWords = cmd.split(' ');
@@ -117,6 +139,10 @@ function tabComplete(input) {
         const match = matches[0];
         const matchWords = match.split(' ');
         if (words.length === 1 || (words.length === 2 && words[1] === '')) {
+            // If command has multiple words, add space after first word
+            if (matchWords.length > 1) {
+                return matchWords[0] + ' ';
+            }
             return matchWords[0];
         } else {
             return prefix + ' ' + matchWords[1];
@@ -128,6 +154,11 @@ function tabComplete(input) {
         
         if (uniqueFirstWords.length === 1 && (words.length === 1 || (words.length === 2 && words[1] === ''))) {
             // All matches start with the same word - complete it automatically
+            // Check if any match has multiple words, then add space
+            const hasMultipleWords = matches.some(m => m.split(' ').length > 1);
+            if (hasMultipleWords) {
+                return uniqueFirstWords[0] + ' ';
+            }
             return uniqueFirstWords[0];
         } else {
             // Multiple matches - show possibilities
@@ -137,6 +168,23 @@ function tabComplete(input) {
     }
     
     return input; // No match found
+}
+
+// Get command description for help
+function getCommandDescription(cmd) {
+    const descriptions = {
+        'show all': 'Display entire resume',
+        'show about': 'Display about me section',
+        'show education': 'Display education section',
+        'show skill': 'Display skills section',
+        'show skills': 'Display skills section',
+        'show experience': 'Display experience section',
+        'show help': 'Display this help message',
+        'help': 'Display this help message',
+        'clear': 'Clear terminal',
+        'cls': 'Clear terminal'
+    };
+    return descriptions[cmd] || '';
 }
 
 // Handle keyboard input
