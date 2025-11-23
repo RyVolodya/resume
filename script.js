@@ -2,7 +2,7 @@
 const resumeData = {
     about: {
         title: "About Me",
-        content: `I have been supporting networks for more than 12 years: monitoring, troubleshooting and security. Also configured VPC virtual networks and VPN's in cloud infrastructures using virtual routers: VyOS, RouterOS. I like what I do.`
+        content: `Experienced network engineer with knowledge of design, implementation and support of network infrastructures. Specialized in corporate networks, security and performance optimization. Have practical experience working with various equipment and protocols, including Cisco, MikroTik, VyOS, and other leading network equipment manufacturers.`
     },
     education: [
         {
@@ -23,14 +23,14 @@ const resumeData = {
         { name: "Routing Protocols", level: 9 },
         { name: "Cisco IOS", level: 8 },
         { name: "RouterOS", level: 9 },
-        { name: "JunOS", level: 7 },
         { name: "VyOS", level: 9 },
         { name: "Debian, Ubuntu OS", level: 8 },
         { name: "Windows OS", level: 8 },
         { name: "Cloud AWS, Azure, Google Cloud", level: 7 },
         { name: "Programming Python", level: 6 },
         { name: "Troubleshooting", level: 10 },
-        { name: "Monitoring", level: 9 }
+        { name: "Monitoring", level: 9 },
+        { name: "Virtualization", level: 6 }
     ],
     experience: [
         {
@@ -38,10 +38,32 @@ const resumeData = {
             company: 'JSC "Ukrainian Railway" Branch "Main Information and Computing Center"',
             date: "2008 - 2021",
             responsibilities: [
-                "Design and laying local networks of any configuration on railway stations and offices of enterprises (last mile).",
-                "Maintenance of technical documentation.",
-                "Creation of physical and logical schemes of networks.",
-                "Configuration of routers (Cisco, MikroTik)."
+                "Design and deployment of local networks of various configurations at railway stations and enterprise offices (last-mile solutions), including planning, cabling, and ensuring reliable network connectivity.",
+                "Maintenance and management of technical documentation, covering network layouts, equipment specifications, configuration records, and operational guidelines to support long-term infrastructure reliability.",
+                "Development of detailed physical and logical network diagrams, illustrating topology, data flows, interconnections, and system architecture for troubleshooting and future expansion.",
+                "Configuration and administration of network routers (Cisco, MikroTik), including routing protocols, security settings, performance optimization, and integration within existing infrastructure."
+            ]
+        },
+        {
+            title: "Network Engineer",
+            company: 'VyOS Networks',
+            date: "2021 - 2023",
+            responsibilities: [
+                "Provided technical support to VyOS users, assisted in resolving network incidents, system configuration, and troubleshooting.",
+                "Participated in diagnosing and fixing bugs in the VyOS system, and collaborated with the development team to improve product stability and functionality.",
+                "Created and maintained official VyOS technical documentation, including guides, instructions, and feature descriptions.",
+                "Improved the quality of interaction with the product by testing new features, preparing recommendations, and providing feedback to the development team."
+            ]
+        },
+        {
+            title: "Network System Engineer",
+            company: 'JSC "Ukrainian Railway" Branch "Main Information and Computing Center"',
+            date: "2023 - Present",
+            responsibilities: [
+                "Monitor network infrastructure to ensure optimal performance, proactively detect issues, and minimize downtime.",
+                "Automate traffic load balancing, failover, and redundancy to enhance network reliability and efficiency.",
+                "Install, configure, and maintain software on servers, ensuring smooth operation and timely updates.",
+                "Manage data backup processes, including scheduling, verification, and recovery procedures, to protect critical information."
             ]
         }
     ],
