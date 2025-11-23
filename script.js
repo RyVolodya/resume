@@ -211,14 +211,14 @@ function executeCommand(command) {
 // Show help
 function showHelp() {
     const helpText = `
-Available commands:
-  <span class="command">show all</span>       - Display entire resume
-  <span class="command">show about</span>     - Display about me section
-  <span class="command">show education</span> - Display education section
-  <span class="command">show skill</span>     - Display skills section
-  <span class="command">show experience</span> - Display experience section
-  <span class="command">show help</span>      - Display this help message
-  <span class="command">clear</span>          - Clear terminal
+Available commands:<br>
+  <span class="command">show all</span> - Display entire resume<br>
+  <span class="command">show about</span> - Display about me section<br>
+  <span class="command">show education</span> - Display education section<br>
+  <span class="command">show skill</span> - Display skills section<br>
+  <span class="command">show experience</span> - Display experience section<br>
+  <span class="command">show help</span> - Display this help message<br>
+  <span class="command">clear</span> - Clear terminal
     `;
     addOutputLine(helpText, 'info');
 }
