@@ -58,12 +58,23 @@ const resumeData = {
         {
             title: "Network System Engineer",
             company: 'JSC "Ukrainian Railway" Branch "Main Information and Computing Center"',
-            date: "2023 - Present",
+            date: "2023 - 2025",
             responsibilities: [
                 "Monitor network infrastructure to ensure optimal performance, proactively detect issues, and minimize downtime.",
                 "Automate traffic load balancing, failover, and redundancy to enhance network reliability and efficiency.",
                 "Install, configure, and maintain software on servers, ensuring smooth operation and timely updates.",
                 "Manage data backup processes, including scheduling, verification, and recovery procedures, to protect critical information."
+            ]
+        },
+        {
+            title: "Deputy Technical Director",
+            company: 'Uzhnet LLC',
+            date: "2026 - Present",
+            responsibilities: [
+                "Design and implementation of new optical lines.",
+                "Modernization and increase in data network capacity.",
+                "Maintaining technical documentation.",
+                "Monitoring and incident response."
             ]
         }
     ],
